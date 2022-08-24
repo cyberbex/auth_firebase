@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "78303779996",
+    "project_id": "cursoudemy-de75b",
+    "storage_bucket": "cursoudemy-de75b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:78303779996:android:718b32cc09d1ea0ee06159",
+        "android_client_info": {
+          "package_name": "com.example.fire_base_auth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "78303779996-pnr1q0vpns38omp800g9shv2rhrgklrk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8Htqt4sGYXJLZhPc3ccxuZwPCHVevuaU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "78303779996-pnr1q0vpns38omp800g9shv2rhrgklrk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
