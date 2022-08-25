@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -29,18 +30,18 @@ class _HomeState extends State<Home> {
     });
   }
 
-  /*  Future<void> _pickImage() async {
-    if (kIsWeb) {
-      final ImagePicker picker = ImagePicker();
-      XFile? image = await picker.pickImage(source: ImageSource.gallery);
-      if (image != null) {
-        var selected = XFile(image.path);
-        setState(() {
-          imagem = selected;
-        });
-      }
-    }
-  } */
+  Future _uploadImagem() async {
+    FirebaseStorage storage = FirebaseStorage.instance;
+    Reference pastaRaiz = storage.ref();
+    Reference arquivo = pastaRaiz.child("fotos").child("fotos1.jpg");
+    //fazer upload da imagem
+    UploadTask task = arquivo.putFile(image!);
+
+    /*  const path = "files/foto1";
+    final file = File(image!.path);
+    final ref = FirebaseStorage.instance.ref().child(path);
+    ref.putFile(file); */
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +52,7 @@ class _HomeState extends State<Home> {
           children: [
             ElevatedButton(
               onPressed: () {
-                //_recuperarImagem(true);
+                _recuperarImagem(true);
               },
               child: const Text('Camera'),
             ),
@@ -61,6 +62,12 @@ class _HomeState extends State<Home> {
                 //_pickImage();
               },
               child: const Text('Galeria'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                _uploadImagem();
+              },
+              child: const Text('Upload imagem fireStore'),
             ),
             image == null
                 ? Container()
