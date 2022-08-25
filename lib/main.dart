@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 
 import 'Home.dart';
 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+void main()  {
+ /*  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
   FirebaseAuth auth = FirebaseAuth.instance;
   String email = 'gamba@gmail.com';
   String senha = 'gamba88';
-
+ */
   //criar usuário
   /* auth
       .createUserWithEmailAndPassword(email: email, password: senha)
@@ -32,13 +32,13 @@ Future<void> main() async {
     print("usuário está deslogado");
   } */
 
-  auth
+/*   auth
       .signInWithEmailAndPassword(email: email, password: senha)
       .then((firebaseUser) {
     print('Logar usuário sucesso!! email:${firebaseUser.user?.email}');
   }).catchError((erro) {
     print('Logar usuário error $erro');
-  });
+  }); */
 
   runApp(const MaterialApp(
     home: Home(),
